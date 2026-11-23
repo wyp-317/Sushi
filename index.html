@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f5f3eb" />
+    <title>一蓑烟雨 · 苏轼的人间行旅</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="typography.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#chapter-1" class="brand"
+        ><span class="seal">東<br />坡</span>
+        <div>一蓑烟雨<small>苏轼的人间行旅</small></div></a
+      >
+      <nav aria-label="主导航">
+        <span class="nav-current">人生长卷</span
+        ><button id="catalog">十幕人生 <span>☰</span></button
+        ><button id="explore">资料检索</button
+        ><button id="about">关于这次阅读 ↗</button>
+      </nav>
+      <span class="edition">A LIFE IN VERSE · 1037—1101</span>
+    </header>
+    <div class="layout">
+      <aside class="rail">
+        <span class="rail-title">人生长卷</span>
+        <div id="dots" class="dots"></div>
+        <span class="rail-bottom">循诗入境<br />与他同行</span>
+      </aside>
+      <main id="main" tabindex="-1">
+        <div class="topline">
+          <span id="chapterLabel">序章 / 等待展开</span
+          ><span class="place" id="place"></span>
+        </div>
+        <section class="scene">
+          <div class="scene-copy">
+            <div class="date">
+              <span id="period">1037—1101</span
+              ><span class="date-divider"></span><span id="age">一段人生</span>
+            </div>
+            <h1 id="title">一蓑烟雨，<br />一生人间。</h1>
+            <p id="subtitle">正在展开苏轼的人生长卷……</p>
+            <div class="people" id="people"></div>
+          </div>
+          <div class="landscape" aria-hidden="true">
+            <div class="sun"></div>
+            <span class="landscape-label" id="landscapeLabel"
+              >山水之间 · 人生之中</span
+            ><svg viewBox="0 0 720 440" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="mount" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#a8b6a0" />
+                  <stop offset="1" stop-color="#e6e8db" />
+                </linearGradient>
+                <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#738e7a" />
+                  <stop offset="1" stop-color="#c9d4c1" />
+                </linearGradient>
+                <filter id="soft"><feGaussianBlur stdDeviation="2" /></filter>
+              </defs>
+              <g filter="url(#soft)">
+                <path
+                  d="M0 320L54 273 97 284 142 212 185 246 229 177 260 202 301 119 326 155 351 140 390 222 428 183 470 239 501 194 553 273 601 235 660 275 720 247V440H0Z"
+                  fill="url(#mount)"
+                  opacity=".65"
+                />
+                <path
+                  d="M0 350L55 321 100 348 151 302 194 312 232 266 270 284 305 238 344 265 381 222 416 250 441 232 490 303 538 279 580 303 635 287 720 345V440H0Z"
+                  fill="url(#near)"
+                  opacity=".7"
+                />
+              </g>
+              <path
+                d="M0 389Q130 352 262 380T480 379T720 385V440H0Z"
+                fill="#e6e8da"
+              />
+              <path
+                d="M0 418Q145 386 305 415T720 412"
+                fill="none"
+                stroke="#8b9e8e"
+                opacity=".3"
+              />
+              <path
+                d="M70 401Q186 390 290 403M436 400Q542 386 634 398M195 427Q400 416 537 428"
+                fill="none"
+                stroke="#90a495"
+                opacity=".35"
+              />
+              <g transform="translate(520 391)" fill="#53695e">
+                <path d="M-35 0Q0 13 35 0Q13 24-21 9Z" />
+                <path d="M0-24L1 2H-2V-24Z" />
+                <path d="M1-23Q24-13 17-3H1Z" opacity=".65" />
+                <circle cx="-12" cy="-7" r="3" />
+                <path d="M-14-4L-17 3H-8L-10-4Z" />
+              </g>
+              <path
+                d="M445 92q9-8 18 0q9-8 18 0M490 116q6-6 12 0q6-6 12 0"
+                fill="none"
+                stroke="#7f8c78"
+                opacity=".7"
+              />
+            </svg>
+            <div class="vertical-title">山川不语<br />岁月有声</div>
+          </div>
+        </section>
+        <section class="reading" id="reading">
+          <article class="context">
+            <div class="section-kicker">身在此时</div>
+            <h2 id="contextTitle">此刻的人间</h2>
+            <p id="event"></p>
+            <details id="weightDetails">
+              <summary>这件事，在当时意味着什么？ <span>＋</span></summary>
+              <p id="weight"></p>
+              <div id="weightSources" class="weight-sources"></div>
+            </details>
+            <div class="small-joy">
+              <span>生活的另一面</span>
+              <p id="joy"></p>
+            </div>
+          </article>
+          <article class="poetry">
+            <div class="section-kicker">字里有心声</div>
+            <div class="poem-header">
+              <h2 id="poemTitle"></h2>
+              <span id="poemAuthor">苏轼</span>
+            </div>
+            <div id="verse" class="verse"></div>
+            <div class="interpretations">
+              <div>
+                <b>作品里，写下了什么</b>
+                <p id="expression"></p>
+              </div>
+              <div>
+                <b>我们可以这样读</b>
+                <p id="readingText"></p>
+              </div>
+            </div>
+            <a id="source" target="_blank" rel="noopener noreferrer"
+              >查看文本与背景来源 ↗</a
+            >
+          </article>
+        </section>
+        <section class="recommended-section" aria-labelledby="recommendedTitle">
+          <span class="section-kicker">一首之外，还有人生</span>
+          <h2 id="recommendedTitle">同一时期，另一种心声</h2>
+          <p id="recommendationIntro"></p>
+          <div id="recommendedGrid" class="recommended-grid"></div>
+          <div class="more-works">
+            <p id="workCount" class="library-note"></p>
+            <button id="moreWorks" type="button">查看本阶段全部作品 ↗</button>
+          </div>
+        </section>
+        <section class="continuation">
+          <div>
+            <span class="eyebrow">下一页，不一定是答案</span>
+            <p id="question"></p>
+          </div>
+          <button id="next" class="next">
+            <span class="next-orbit">↗</span
+            ><span>未来会怎样？<small id="nextHint">走入下一幕</small></span>
+          </button>
+        </section>
+        <footer>
+          <span>不把苦难写成必经的礼物，也不遗漏生活里的微光。</span>
+          <div>
+            <button id="prev">← 上一幕</button><span id="counter">01 / 10</span>
+          </div>
+        </footer>
+        <p id="error" role="alert" hidden></p>
+      </main>
+    </div>
+    <dialog id="menu">
+      <div class="dialog-header">
+        <div>
+          <span class="eyebrow">TEN CHAPTERS</span>
+          <h2>循着时间，与他同行</h2>
+        </div>
+        <button class="close" aria-label="关闭目录">×</button>
+      </div>
+      <div id="chaptersList"></div>
+    </dialog>
+    <dialog id="info">
+      <div class="dialog-header">
+        <h2>读诗，也读一个人的处境</h2>
+        <button class="close" aria-label="关闭说明">×</button>
+      </div>
+      <p>
+        这是一份十幕人生的叙事
+        demo。年份与事件来自前期文献调研，诗词是阅读心境的入口，不是作者心理的完整记录。
+      </p>
+      <p>
+        <strong>年龄口径：</strong
+        >按公元事件年减出生年推算约龄，并非精确周岁。阶段中的年龄卡片对应标出的具体年份；人物生年有争议时保留传统记载，不强行换算。
+      </p>
+      <p>
+        <strong>阅读边界：</strong
+        >“我们可以这样读”是现代解释；标题和过渡提问是策划文案。作品异文与部分编年仍待校核，尤其《纵笔》。童年页使用史传，不虚构少年诗作。
+      </p>
+      <p>
+        背景山水为原创SVG意象，不是历史地貌复原。本页使用本地作品资料完成阅读与检索。
+      </p>
+    </dialog>
+    <dialog id="explorer" class="explorer">
+      <div class="dialog-header">
+        <div>
+          <span class="eyebrow">循着文字，寻找关联</span>
+          <h2>人物 · 事件 · 作品</h2>
+        </div>
+        <button class="close" aria-label="关闭检索">×</button>
+      </div>
+      <p id="libraryStats" class="library-note"></p>
+      <p class="library-note">
+        以下条件均为选填，只填年份、地点或关键词中的任意一项即可检索；填写多项时同时筛选。清空条件可浏览全部资料。
+      </p>
+      <form id="searchForm" novalidate>
+        <label class="search-wide"
+          >关键词<input
+            id="searchQuery"
+            maxlength="100"
+            placeholder="试试：子由、一蓑烟雨、乌台诗案"
+        /></label>
+        <label
+          >地点<input id="searchPlace" maxlength="50" placeholder="例如：黄州"
+        /></label>
+        <label
+          >资料类型<select id="searchKind">
+            <option value="all">全部资料</option>
+            <option value="work">作品</option>
+            <option value="event">事件</option>
+            <option value="person">人物</option>
+          </select></label
+        >
+        <label
+          >作品体裁<select id="searchGenre">
+            <option value="">不限体裁</option>
+            <option>诗</option>
+            <option>词</option>
+            <option>赋</option>
+            <option>记</option>
+            <option>文</option>
+          </select></label
+        >
+        <label
+          >人生阶段<select id="searchChapter">
+            <option value="">全部阶段</option>
+          </select></label
+        >
+        <label
+          >起始年份<input
+            id="searchStart"
+            type="number"
+            min="1"
+            max="9999"
+            placeholder="如 1080"
+        /></label>
+        <label
+          >结束年份<input
+            id="searchEnd"
+            type="number"
+            min="1"
+            max="9999"
+            placeholder="如 1084"
+        /></label>
+        <div class="search-actions">
+          <button type="reset">清空条件</button
+          ><button type="submit" class="search-submit">按条件筛选 ↗</button>
+        </div>
+      </form>
+      <p id="searchStatus" role="status" aria-live="polite"></p>
+      <nav class="search-pagination" aria-label="检索结果顶部翻页" hidden>
+        <button class="page-prev" type="button">← 上一页</button>
+        <span class="page-label"></span>
+        <button class="page-next" type="button">下一页 →</button>
+      </nav>
+      <div id="searchResults"></div>
+      <nav class="search-pagination" aria-label="检索结果底部翻页" hidden>
+        <button class="page-prev" type="button">← 上一页</button>
+        <span class="page-label"></span>
+        <button class="page-next" type="button">下一页 →</button>
+      </nav>
+    </dialog>
+    <dialog id="searchNotice" aria-labelledby="searchNoticeTitle">
+      <div class="dialog-header">
+        <h2 id="searchNoticeTitle">检索提示</h2>
+        <button class="close" aria-label="关闭检索提示">×</button>
+      </div>
+      <p id="searchNoticeText" role="alert"></p>
+      <button id="retrySearch" type="button" class="search-submit">
+        重试检索
+      </button>
+    </dialog>
+    <dialog id="workReader" class="work-reader" aria-labelledby="readerTitle">
+      <div class="dialog-header">
+        <span class="section-kicker">循着原文，读他的此时</span
+        ><button class="close" aria-label="关闭作品阅读">×</button>
+      </div>
+      <h2 id="readerTitle">作品阅读</h2>
+      <p id="readerMeta" class="library-note"></p>
+      <p id="readerReason" class="reader-reason"></p>
+      <p id="readerScope" class="library-note"></p>
+      <div id="readerOriginal" class="work-original" tabindex="0"></div>
+      <section class="reader-context">
+        <h3>写作时，身在何处</h3>
+        <p id="readerBackground"></p>
+        <h3>循着文字，继续想一想</h3>
+        <p id="readerInterpretation"></p>
+      </section>
+      <details class="reader-evidence">
+        <summary>查看编年与背景依据</summary>
+        <p id="readerReview"></p>
+        <div id="readerSources"></div>
+      </details>
+    </dialog>
+    <script src="pages-data.js"></script>
+<script src="pages-api.js"></script>
+<script src="app.js?v=github-pages"></script>
+  </body>
+</html>

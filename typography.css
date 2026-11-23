@@ -1,0 +1,714 @@
+/* Editorial hierarchy: title → selected verse → narrative → commentary → notes. */
+:root {
+  --display: "KaiTi", "STKaiti", "楷体", "Songti SC", serif;
+  --serif: "Songti SC", "SimSun", "宋体", serif;
+}
+.recommended-section {
+  border-top: 1px solid var(--line);
+  padding: 35px 0 26px;
+}
+.recommended-section > h2 {
+  font: 34px var(--display);
+  margin: 12px 0;
+  color: #405d4d;
+}
+#recommendationIntro {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #6d7967;
+}
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.recommended-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+  padding: 24px;
+  background: #f7f7efbd;
+  border: 1px solid #cfd7c4;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #425c47;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.recommended-card:hover {
+  background: #edf0e4;
+  transform: translateY(-3px);
+}
+.recommended-card:focus-visible {
+  outline: 2px solid #6b8660;
+  outline-offset: 4px;
+}
+.recommended-card small {
+  font-size: 12px;
+  color: #75836b;
+  line-height: 1.8;
+}
+.recommended-card h3 {
+  font: 24px/1.5 var(--serif);
+  margin: 16px 0 10px;
+}
+.recommended-card p {
+  font:
+    14px/1.95 "Microsoft YaHei",
+    sans-serif;
+  color: #66735e;
+  margin: 0 0 20px;
+}
+.card-link {
+  font-size: 13px;
+  margin-top: auto;
+  color: #8b634c;
+}
+.recommended-section .more-works {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  margin-top: 18px;
+}
+.recommended-section .more-works > button {
+  font-size: 18px;
+}
+dialog.work-reader {
+  width: min(820px, 90vw);
+  padding: 32px 42px;
+}
+#readerTitle {
+  font: 34px/1.5 var(--display);
+  color: #405d4d;
+  margin: 20px 0 12px;
+}
+.reader-reason {
+  padding: 15px 20px;
+  border-left: 2px solid #b58b68;
+  color: #78614b;
+  font-size: 15px;
+  line-height: 1.9;
+}
+#readerOriginal {
+  font-size: 21px;
+  padding: 25px 0;
+  line-height: 2.2;
+}
+.reader-context {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.reader-context h3 {
+  font: 20px var(--serif);
+  color: #405d4d;
+}
+.reader-context p,
+.reader-evidence {
+  font-size: 14px;
+  line-height: 2;
+  color: #69775f;
+}
+.reader-evidence {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+.reader-evidence summary {
+  cursor: pointer;
+}
+.reader-evidence a {
+  color: #627a55;
+}
+.reader-evidence p {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 900px) {
+  .recommended-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .recommended-grid {
+    grid-template-columns: 1fr;
+  }
+  .recommended-section > h2,
+  #readerTitle {
+    font-size: 28px;
+  }
+  .recommended-section .more-works {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+  dialog.work-reader {
+    padding: 22px;
+  }
+  #readerOriginal {
+    font-size: 18px;
+  }
+}
+.header nav,
+.header nav button {
+  font-size: 13px;
+}
+.brand {
+  font-weight: 600;
+  font-size: 26px;
+}
+.topline {
+  font-size: 12px;
+  color: #66745f;
+}
+#chapterLabel {
+  letter-spacing: 3px;
+}
+.scene {
+  min-height: 485px;
+}
+.scene-copy {
+  padding-top: 42px;
+  padding-bottom: 44px;
+}
+.date {
+  gap: 16px;
+  align-items: baseline;
+}
+#period {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  color: #697b62;
+  letter-spacing: 2px;
+}
+#age {
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: #727d69;
+}
+h1 {
+  font-family: var(--display);
+  font-size: clamp(48px, 4.4vw, 68px);
+  line-height: 1.45;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-top: 23px;
+  margin-bottom: 22px;
+}
+.scene-copy > p {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: #67745f;
+  line-height: 1.9;
+  max-width: 470px;
+}
+.person {
+  font-size: 11px;
+  color: #68755e;
+  background: #ffffff38;
+  padding: 8px 11px;
+}
+.scene-link {
+  font-size: 13px;
+  margin-top: 28px;
+}
+.reading {
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.section-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #607457;
+}
+.section-kicker span {
+  font-size: 9px;
+  font-weight: 400;
+}
+.context h2 {
+  font-family: var(--serif);
+  font-size: 31px;
+  color: #334a3b;
+  margin-top: 16px;
+  margin-bottom: 18px;
+}
+.context > p {
+  font-size: 15px;
+  color: #566552;
+  line-height: 2.05;
+}
+.event-lead {
+  display: block;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.9;
+  font-weight: 600;
+  color: #3e5541;
+  margin-bottom: 14px;
+}
+.context summary {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 0;
+}
+.context details p {
+  font-size: 14px;
+  line-height: 2;
+  color: #66735d;
+}
+.small-joy {
+  padding-left: 20px;
+  margin-top: 30px;
+}
+.small-joy > span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7b8459;
+}
+.small-joy p {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: #667351;
+  line-height: 1.95;
+  margin-top: 10px;
+}
+.poetry {
+  padding-left: 35px;
+  border-left-color: #cdd5bf;
+}
+.poem-header {
+  gap: 14px;
+  align-items: baseline;
+  margin-top: 4px;
+}
+.poem-header h2 {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #5f7057;
+}
+.poem-header > span {
+  font-size: 12px;
+  color: #7b866d;
+}
+.verse {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 2.1;
+  letter-spacing: 0;
+  white-space: normal;
+  color: #64765d;
+  margin-top: 18px;
+  margin-bottom: 31px;
+}
+.verse-line {
+  display: block;
+}
+.key-verse {
+  font-family: var(--display);
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #9b503c;
+  margin: 17px 0 19px;
+  padding-left: 17px;
+  border-left: 2px solid #b98568;
+}
+.interpretations {
+  gap: 20px;
+  border-top: 1px solid #d8deca;
+  padding-top: 21px;
+}
+.interpretations b {
+  font-size: 12px;
+  font-weight: 600;
+  color: #586d50;
+  letter-spacing: 2px;
+}
+.interpretations p {
+  font-size: 14px;
+  color: #66735e;
+  line-height: 1.95;
+  margin-top: 10px;
+}
+.interpretations > div + div {
+  padding: 19px 21px;
+  background: #e8ecdc;
+  border-radius: 2px;
+}
+.interpretations > div + div b {
+  color: #8a6144;
+}
+.poetry > a {
+  font-size: 11px;
+  color: #78856a;
+  margin-top: 22px;
+}
+.continuation {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.eyebrow {
+  font-size: 10px;
+}
+.continuation p {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.7;
+  color: #4b6148;
+  max-width: 650px;
+}
+.next {
+  font-family: var(--display);
+  font-size: 24px;
+  white-space: nowrap;
+}
+.next-orbit {
+  width: 59px;
+  height: 59px;
+  font-size: 29px;
+}
+.next small {
+  font-size: 11px;
+}
+footer {
+  font-size: 11px;
+  color: #7e886f;
+}
+footer button {
+  font-size: 12px;
+}
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 51px;
+  }
+  .scene {
+    min-height: 470px;
+  }
+  .reading {
+    gap: 30px;
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .poetry {
+    padding-left: 25px;
+  }
+  .key-verse {
+    font-size: 26px;
+    padding-left: 12px;
+  }
+  .verse {
+    font-size: 18px;
+  }
+  .continuation p {
+    font-size: 21px;
+  }
+}
+@media (max-width: 720px) {
+  .brand {
+    font-size: 22px;
+  }
+  h1 {
+    font-size: 43px;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .scene {
+    min-height: 520px;
+  }
+  .scene-copy {
+    padding-bottom: 105px;
+  }
+  .scene-copy > p {
+    font-size: 16px;
+  }
+  .date {
+    flex-wrap: wrap;
+    gap: 8px 11px;
+  }
+  #period {
+    font-size: 24px;
+  }
+  #age {
+    font-size: 11px;
+  }
+  .reading {
+    grid-template-columns: 1fr;
+    padding-top: 33px;
+  }
+  .context h2 {
+    font-size: 29px;
+  }
+  .event-lead {
+    font-size: 21px;
+  }
+  .context > p {
+    font-size: 16px;
+  }
+  .poetry {
+    padding-left: 0;
+  }
+  .poem-header h2 {
+    font-size: 21px;
+  }
+  .verse {
+    font-size: 19px;
+    line-height: 2.1;
+  }
+  .key-verse {
+    font-size: 27px;
+    line-height: 1.7;
+  }
+  .interpretations p {
+    font-size: 15px;
+  }
+  .small-joy p {
+    font-size: 18px;
+  }
+  .continuation p {
+    font-size: 22px;
+  }
+  footer {
+    line-height: 1.9;
+  }
+}
+
+/* One year style across all ten chapters and both desktop/mobile layouts. */
+:root {
+  --year-font: "Segoe UI", "Microsoft YaHei", sans-serif;
+  --year-size: 14px;
+}
+#period,
+.year {
+  font-family: var(--year-font);
+  font-size: var(--year-size);
+  font-weight: 500;
+  font-style: normal;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings:
+    "lnum" 1,
+    "tnum" 1;
+  letter-spacing: 0.04em;
+  color: #65745f;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+.date {
+  align-items: baseline;
+  gap: 12px;
+}
+.poem-header h2 .year {
+  display: inline-block;
+}
+
+.weight-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #d8deca;
+}
+.weight-sources a {
+  font:
+    12px/1.8 "Microsoft YaHei",
+    sans-serif;
+  color: #738263;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Research tools follow the same quiet visual language as the narrative. */
+.explorer {
+  width: min(900px, 94vw);
+}
+.library-note {
+  font:
+    12px/1.9 "Microsoft YaHei",
+    sans-serif;
+  color: #76816a;
+}
+#searchForm {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+#searchForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  color: #64745a;
+}
+#searchForm .search-wide {
+  grid-column: 1/-1;
+}
+#searchForm input,
+#searchForm select {
+  width: 100%;
+  padding: 11px 12px;
+  background: #fffdf5;
+  border: 1px solid #d2d9c5;
+  border-radius: 4px;
+  color: #344c38;
+  font:
+    14px "Microsoft YaHei",
+    sans-serif;
+  outline-color: #829474;
+}
+.search-actions {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+}
+.search-actions button,
+.search-submit {
+  padding: 11px 15px;
+  border: 1px solid #cdd7bf;
+  background: transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.search-submit {
+  background: #526e52 !important;
+  color: #fff;
+  border-color: #526e52 !important;
+}
+#searchStatus {
+  font-size: 13px;
+  color: #657556;
+  margin: 20px 0;
+}
+.search-result {
+  padding: 21px 0;
+  border-top: 1px solid #d9decd;
+}
+.search-result small {
+  font-size: 12px;
+  color: #879078;
+}
+.search-result h3 {
+  font: 23px var(--serif);
+  margin: 12px 0;
+  color: #3f593e;
+}
+.search-result p {
+  font-size: 14px;
+  line-height: 1.95;
+  white-space: pre-line;
+  color: #627357;
+}
+.search-result p.library-note {
+  font-size: 12px;
+  color: #859078;
+  overflow-wrap: anywhere;
+}
+.result-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.result-jump {
+  padding: 7px 0;
+  border: 0;
+  background: none;
+  color: #687f58;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 13px;
+}
+.result-actions a {
+  font-size: 12px;
+  color: #84916f;
+}
+.more-works {
+  margin-top: 32px;
+  padding: 24px 0 0;
+  border-top: 1px solid #d9decd;
+}
+.more-works > button {
+  display: block;
+  margin: 12px 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #55704e;
+  font: 23px var(--serif);
+  cursor: pointer;
+  text-align: left;
+}
+.more-works > button:hover {
+  color: #a0694e;
+}
+.work-reading {
+  margin: 18px 0;
+  border-left: 2px solid #bdc9ac;
+  padding-left: 18px;
+}
+.work-reading summary {
+  color: #58734e;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 0;
+}
+.work-original {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 2.15;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #41563d;
+  padding: 16px 0 8px;
+}
+.search-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  color: #687f58;
+  font-size: 13px;
+}
+.search-pagination[hidden] {
+  display: none;
+}
+.search-pagination button {
+  padding: 9px 12px;
+  border: 1px solid #cdd7bf;
+  background: transparent;
+  border-radius: 4px;
+  color: #526e52;
+  cursor: pointer;
+}
+.search-pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.page-label {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 720px) {
+  #searchForm {
+    grid-template-columns: 1fr 1fr;
+  }
+  .search-actions {
+    grid-column: 1/-1;
+    justify-content: flex-end;
+  }
+  .header nav {
+    gap: 14px;
+  }
+  .header nav button {
+    font-size: 12px;
+  }
+  .brand {
+    letter-spacing: 1px;
+  }
+}
